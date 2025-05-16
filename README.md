@@ -1,4 +1,4 @@
-# Ticket Management System
+# Ticket Management System Using AI
 
 A full-stack ticket management system built with ASP.NET Core and Entity Framework Core.
 
