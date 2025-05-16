@@ -1,0 +1,156 @@
+/* Ticket Management System Styles */
+
+/* Dashboard Cards */
+.dashboard-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+/* Status badges */
+.badge-open {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-closed {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Priority badges */
+.priority-low {
+    background-color: #28a745;
+}
+
+.priority-medium {
+    background-color: #17a2b8;
+}
+
+.priority-high {
+    background-color: #ffc107;
+}
+
+.priority-critical {
+    background-color: #dc3545;
+}
+
+/* Ticket list styles */
+.ticket-item {
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s;
+}
+
+.ticket-item:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.ticket-item.priority-low {
+    border-left-color: #28a745;
+}
+
+.ticket-item.priority-medium {
+    border-left-color: #17a2b8;
+}
+
+.ticket-item.priority-high {
+    border-left-color: #ffc107;
+}
+
+.ticket-item.priority-critical {
+    border-left-color: #dc3545;
+}
+
+/* Chart containers */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.ticket-form label {
+    font-weight: 600;
+}
+
+.ticket-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #80bdff;
+}
+
+.ticket-description {
+    min-height: 120px;
+}
+
+/* Admin response section */
+.admin-response {
+    background-color: #f8f9fa;
+    border-left: 4px solid #17a2b8;
+    padding: 15px;
+    border-radius: 0 4px 4px 0;
+    margin-top: 20px;
+}
+
+.admin-response-header {
+    font-weight: 600;
+    color: #17a2b8;
+    margin-bottom: 10px;
+}
+
+/* User info card */
+.user-info-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.user-info-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.user-info-email {
+    color: #6c757d;
+}
+
+/* Ticket details page */
+.ticket-details-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.ticket-details-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.ticket-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Progress bar */
+.completion-progress {
+    height: 25px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Dashboard icons */
+.dashboard-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+} 

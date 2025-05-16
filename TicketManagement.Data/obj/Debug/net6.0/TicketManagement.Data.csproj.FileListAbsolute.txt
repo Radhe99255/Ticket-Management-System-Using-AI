@@ -1,0 +1,14 @@
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\bin\Debug\net6.0\TicketManagement.Data.deps.json
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\bin\Debug\net6.0\TicketManagement.Data.runtimeconfig.json
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\bin\Debug\net6.0\TicketManagement.Data.dll
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\bin\Debug\net6.0\TicketManagement.Data.pdb
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.csproj.AssemblyReference.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.AssemblyInfoInputs.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.AssemblyInfo.cs
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.csproj.CoreCompileInputs.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.dll
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\refint\TicketManagement.Data.dll
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.pdb
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\TicketManagement.Data.genruntimeconfig.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Data\obj\Debug\net6.0\ref\TicketManagement.Data.dll

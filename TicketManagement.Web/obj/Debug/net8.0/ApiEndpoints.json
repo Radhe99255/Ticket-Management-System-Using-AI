@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "TicketManagement.Web.Controllers.SignalRProxyController",
+    "Method": "JoinGroup",
+    "RelativePath": "api/SignalRProxy/JoinGroup/{ticketId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "connectionId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketManagement.Web.Controllers.SignalRProxyController",
+    "Method": "LeaveGroup",
+    "RelativePath": "api/SignalRProxy/LeaveGroup/{ticketId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "connectionId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketManagement.Web.Controllers.SignalRProxyController",
+    "Method": "SendMessage",
+    "RelativePath": "api/SignalRProxy/SendMessage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "message",
+        "Type": "TicketManagement.Web.Models.MessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

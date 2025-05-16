@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Ticket",
+    "Projects": [
+      {
+        "Path": "TicketManagement.Api\\TicketManagement.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "TicketManagement.Web\\TicketManagement.Web.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.csproj.AssemblyReference.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.AssemblyInfoInputs.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.AssemblyInfo.cs
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.csproj.CoreCompileInputs.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.RazorAssemblyInfo.cache
+C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Web\obj\Debug\net6.0\TicketManagement.Web.RazorAssemblyInfo.cs

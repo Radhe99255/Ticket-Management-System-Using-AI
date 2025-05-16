@@ -1,0 +1,64 @@
+@model TicketManagement.Web.Models.RespondTicketViewModel
+
+@{
+    ViewData["Title"] = "Respond to Ticket";
+    Layout = "_Layout";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Respond to Ticket #@Model.TicketId</h3>
+    </div>
+    <div class="card-body">
+        <div class="mb-4">
+            <h5>Ticket Details</h5>
+            <dl class="row">
+                <dt class="col-sm-2">Subject:</dt>
+                <dd class="col-sm-10">@Model.Subject</dd>
+                
+                <dt class="col-sm-2">Description:</dt>
+                <dd class="col-sm-10">@Model.Description</dd>
+                
+                <dt class="col-sm-2">Status:</dt>
+                <dd class="col-sm-10">
+                    @if (Model.Status == "Open")
+                    {
+                        <span class="badge bg-success">@Model.Status</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">@Model.Status</span>
+                    }
+                </dd>
+                
+                <dt class="col-sm-2">Created:</dt>
+                <dd class="col-sm-10">@Model.CreatedAt.ToString("MMM dd, yyyy HH:mm")</dd>
+            </dl>
+        </div>
+        
+        <form asp-action="RespondToTicket" method="post">
+            <input type="hidden" asp-for="TicketId" />
+            <input type="hidden" asp-for="Subject" />
+            <input type="hidden" asp-for="Description" />
+            <input type="hidden" asp-for="Status" />
+            <input type="hidden" asp-for="CreatedAt" />
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="AdminResponse" class="control-label">Your Response</label>
+                <textarea asp-for="AdminResponse" class="form-control" rows="5" placeholder="Enter your response to this ticket..."></textarea>
+                <span asp-validation-for="AdminResponse" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-success">Submit Response</button>
+                <a asp-action="ViewTicket" asp-route-id="@Model.TicketId" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

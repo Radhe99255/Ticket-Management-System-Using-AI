@@ -1,0 +1,59 @@
+@model IEnumerable<TicketManagement.Web.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Registered Users</h3>
+    </div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">
+                <p class="mb-0">No users found in the system.</p>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>#@user.UserId</td>
+                                <td>@user.Name</td>
+                                <td>@user.Email</td>
+                                <td>
+                                    @if (user.IsAdmin)
+                                    {
+                                        <span class="badge bg-danger">Admin</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Normal User</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="UserTickets" asp-route-id="@user.UserId" class="btn btn-sm btn-primary">View Tickets</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div> 

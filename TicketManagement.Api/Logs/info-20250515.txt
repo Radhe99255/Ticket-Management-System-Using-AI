@@ -1,0 +1,1097 @@
+2025-05-15 17:43:06.269 [INF] Now listening on: http://localhost:5014
+2025-05-15 17:43:06.293 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-15 17:43:06.293 [INF] Hosting environment: Development
+2025-05-15 17:43:06.293 [INF] Content root path: C:\Users\HarshilKalariya\Downloads\Learning\Ticket\TicketManagement.Api
+2025-05-15 17:43:25.383 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/user/login - application/json; charset=utf-8 50
+2025-05-15 17:43:25.420 [INF] Executing endpoint 'TicketManagement.Api.Controllers.UserController.Login (TicketManagement.Api)'
+2025-05-15 17:43:25.470 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.LoginResponseDto]] Login(TicketManagement.Api.DTOs.UserLoginDto) on controller TicketManagement.Api.Controllers.UserController (TicketManagement.Api).
+2025-05-15 17:43:25.653 [INF] Login attempt for user admin@admin.com
+2025-05-15 17:43:26.629 [INF] Executed DbCommand (40ms) [Parameters=[@__ToLower_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @__ToLower_0 AND [u].[Password] = @__password_1
+2025-05-15 17:43:26.674 [INF] Successful login for user 1 with email admin@admin.com
+2025-05-15 17:43:26.680 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.LoginResponseDto'.
+2025-05-15 17:43:26.705 [INF] Executed action TicketManagement.Api.Controllers.UserController.Login (TicketManagement.Api) in 1229.4077ms
+2025-05-15 17:43:26.706 [INF] Executed endpoint 'TicketManagement.Api.Controllers.UserController.Login (TicketManagement.Api)'
+2025-05-15 17:43:26.712 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/user/login - 200 null application/json; charset=utf-8 1329.8077ms
+2025-05-15 17:43:26.746 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/user - null null
+2025-05-15 17:43:26.751 [INF] Executing endpoint 'TicketManagement.Api.Controllers.UserController.GetAllUsers (TicketManagement.Api)'
+2025-05-15 17:43:26.755 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.UserDto]]] GetAllUsers() on controller TicketManagement.Api.Controllers.UserController (TicketManagement.Api).
+2025-05-15 17:43:26.758 [INF] Retrieving all users
+2025-05-15 17:43:26.797 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+2025-05-15 17:43:26.799 [INF] Retrieved 5 users
+2025-05-15 17:43:26.799 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[TicketManagement.Data.Models.User, TicketManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[TicketManagement.Api.DTOs.UserDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:26.806 [INF] Executed action TicketManagement.Api.Controllers.UserController.GetAllUsers (TicketManagement.Api) in 50.7968ms
+2025-05-15 17:43:26.807 [INF] Executed endpoint 'TicketManagement.Api.Controllers.UserController.GetAllUsers (TicketManagement.Api)'
+2025-05-15 17:43:26.808 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/user - 200 null application/json; charset=utf-8 61.2071ms
+2025-05-15 17:43:28.898 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/user/2 - null null
+2025-05-15 17:43:28.901 [INF] Executing endpoint 'TicketManagement.Api.Controllers.UserController.GetUserById (TicketManagement.Api)'
+2025-05-15 17:43:28.905 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.UserDto]] GetUserById(Int32) on controller TicketManagement.Api.Controllers.UserController (TicketManagement.Api).
+2025-05-15 17:43:28.990 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+2025-05-15 17:43:28.992 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.UserDto'.
+2025-05-15 17:43:28.993 [INF] Executed action TicketManagement.Api.Controllers.UserController.GetUserById (TicketManagement.Api) in 87.2557ms
+2025-05-15 17:43:28.993 [INF] Executed endpoint 'TicketManagement.Api.Controllers.UserController.GetUserById (TicketManagement.Api)'
+2025-05-15 17:43:28.993 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/user/2 - 200 null application/json; charset=utf-8 95.1288ms
+2025-05-15 17:43:28.996 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/ticket/user/2 - null null
+2025-05-15 17:43:28.996 [INF] Executing endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketsByUserId (TicketManagement.Api)'
+2025-05-15 17:43:28.999 [INF] Route matched with {action = "GetTicketsByUserId", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.TicketDto]]] GetTicketsByUserId(Int32) on controller TicketManagement.Api.Controllers.TicketController (TicketManagement.Api).
+2025-05-15 17:43:29.001 [INF] Retrieving tickets for user 2
+2025-05-15 17:43:29.005 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+2025-05-15 17:43:29.028 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId]
+FROM [Tickets] AS [t]
+WHERE [t].[UserId] = @__userId_0
+ORDER BY [t].[CreatedAt] DESC
+2025-05-15 17:43:29.084 [INF] Retrieved 4 tickets for user 2
+2025-05-15 17:43:29.084 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[TicketManagement.Data.Models.Ticket, TicketManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[TicketManagement.Api.DTOs.TicketDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:29.098 [INF] Executed action TicketManagement.Api.Controllers.TicketController.GetTicketsByUserId (TicketManagement.Api) in 99.4214ms
+2025-05-15 17:43:29.099 [INF] Executed endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketsByUserId (TicketManagement.Api)'
+2025-05-15 17:43:29.099 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/ticket/user/2 - 200 null application/json; charset=utf-8 103.2642ms
+2025-05-15 17:43:31.418 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/ticket/11 - null null
+2025-05-15 17:43:31.421 [INF] Executing endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:31.425 [INF] Route matched with {action = "GetTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.TicketDto]] GetTicketById(Int32) on controller TicketManagement.Api.Controllers.TicketController (TicketManagement.Api).
+2025-05-15 17:43:31.461 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:31.464 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.TicketDto'.
+2025-05-15 17:43:31.464 [INF] Executed action TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api) in 39.3557ms
+2025-05-15 17:43:31.464 [INF] Executed endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:31.465 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/ticket/11 - 200 null application/json; charset=utf-8 46.8879ms
+2025-05-15 17:43:31.467 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:43:31.467 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:31.469 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:43:31.471 [INF] Getting messages for ticket 11
+2025-05-15 17:43:31.474 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:31.493 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:43:31.501 [INF] Found 3 messages for ticket 11
+2025-05-15 17:43:31.502 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:31.504 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 34.3821ms
+2025-05-15 17:43:31.504 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:31.504 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 37.1196ms
+2025-05-15 17:43:31.578 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:43:31.579 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:31.579 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:43:31.581 [INF] Getting messages for ticket 11
+2025-05-15 17:43:31.583 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:31.586 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:43:31.586 [INF] Found 3 messages for ticket 11
+2025-05-15 17:43:31.586 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:31.587 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 7.1994ms
+2025-05-15 17:43:31.587 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:31.587 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 8.7342ms
+2025-05-15 17:43:32.766 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/ticket/11 - null null
+2025-05-15 17:43:32.767 [INF] Executing endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:32.767 [INF] Route matched with {action = "GetTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.TicketDto]] GetTicketById(Int32) on controller TicketManagement.Api.Controllers.TicketController (TicketManagement.Api).
+2025-05-15 17:43:32.771 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:32.774 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.TicketDto'.
+2025-05-15 17:43:32.774 [INF] Executed action TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api) in 7.6147ms
+2025-05-15 17:43:32.774 [INF] Executed endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:32.775 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/ticket/11 - 200 null application/json; charset=utf-8 8.6368ms
+2025-05-15 17:43:44.118 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/ticket/11/respond - application/json; charset=utf-8 45
+2025-05-15 17:43:44.119 [INF] Executing endpoint 'TicketManagement.Api.Controllers.TicketController.AddAdminResponse (TicketManagement.Api)'
+2025-05-15 17:43:44.123 [INF] Route matched with {action = "AddAdminResponse", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.TicketResponseDto]] AddAdminResponse(Int32, TicketManagement.Api.DTOs.AdminResponseDto) on controller TicketManagement.Api.Controllers.TicketController (TicketManagement.Api).
+2025-05-15 17:43:44.133 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:44.220 [INF] Executed DbCommand (17ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tickets] SET [AdminResponse] = @p0
+OUTPUT 1
+WHERE [TicketId] = @p1;
+2025-05-15 17:43:44.230 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:44.231 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.TicketResponseDto'.
+2025-05-15 17:43:44.232 [INF] Executed action TicketManagement.Api.Controllers.TicketController.AddAdminResponse (TicketManagement.Api) in 108.8946ms
+2025-05-15 17:43:44.232 [INF] Executed endpoint 'TicketManagement.Api.Controllers.TicketController.AddAdminResponse (TicketManagement.Api)'
+2025-05-15 17:43:44.232 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/ticket/11/respond - 200 null application/json; charset=utf-8 113.6686ms
+2025-05-15 17:43:44.245 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/ticket/11 - null null
+2025-05-15 17:43:44.245 [INF] Executing endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:44.246 [INF] Route matched with {action = "GetTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TicketManagement.Api.DTOs.TicketDto]] GetTicketById(Int32) on controller TicketManagement.Api.Controllers.TicketController (TicketManagement.Api).
+2025-05-15 17:43:44.247 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:44.248 [INF] Executing OkObjectResult, writing value of type 'TicketManagement.Api.DTOs.TicketDto'.
+2025-05-15 17:43:44.248 [INF] Executed action TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api) in 2.3689ms
+2025-05-15 17:43:44.248 [INF] Executed endpoint 'TicketManagement.Api.Controllers.TicketController.GetTicketById (TicketManagement.Api)'
+2025-05-15 17:43:44.248 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/ticket/11 - 200 null application/json; charset=utf-8 2.9455ms
+2025-05-15 17:43:44.249 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:43:44.250 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:44.250 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:43:44.252 [INF] Getting messages for ticket 11
+2025-05-15 17:43:44.255 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:44.256 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:43:44.257 [INF] Found 3 messages for ticket 11
+2025-05-15 17:43:44.258 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:44.258 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 8.5412ms
+2025-05-15 17:43:44.258 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:44.258 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 9.0444ms
+2025-05-15 17:43:44.296 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:43:44.297 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:44.297 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:43:44.297 [INF] Getting messages for ticket 11
+2025-05-15 17:43:44.299 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:43:44.301 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:43:44.302 [INF] Found 3 messages for ticket 11
+2025-05-15 17:43:44.303 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:43:44.304 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 6.8974ms
+2025-05-15 17:43:44.304 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:43:44.304 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 7.7096ms
+2025-05-15 17:44:15.254 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:44:15.257 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:44:15.257 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:44:15.259 [INF] Getting messages for ticket 11
+2025-05-15 17:44:15.264 [INF] Executed DbCommand (3ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:44:15.267 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:44:15.268 [INF] Found 3 messages for ticket 11
+2025-05-15 17:44:15.268 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:44:15.269 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 11.4189ms
+2025-05-15 17:44:15.269 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:44:15.269 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.5353ms
+2025-05-15 17:45:15.335 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:45:15.336 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:45:15.336 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:45:15.337 [INF] Getting messages for ticket 11
+2025-05-15 17:45:15.348 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:45:15.358 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:45:15.360 [INF] Found 3 messages for ticket 11
+2025-05-15 17:45:15.361 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:45:15.361 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 24.8729ms
+2025-05-15 17:45:15.361 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:45:15.362 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 26.5019ms
+2025-05-15 17:45:46.242 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:45:46.242 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:45:46.242 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:45:46.243 [INF] Getting messages for ticket 11
+2025-05-15 17:45:46.249 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:45:46.256 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:45:46.256 [INF] Found 3 messages for ticket 11
+2025-05-15 17:45:46.256 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:45:46.257 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 14.2887ms
+2025-05-15 17:45:46.257 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:45:46.257 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.0689ms
+2025-05-15 17:47:17.246 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:47:17.247 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:47:17.247 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:47:17.248 [INF] Getting messages for ticket 11
+2025-05-15 17:47:17.259 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:47:17.270 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:47:17.271 [INF] Found 3 messages for ticket 11
+2025-05-15 17:47:17.271 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:47:17.272 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 24.3067ms
+2025-05-15 17:47:17.272 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:47:17.272 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 25.6305ms
+2025-05-15 17:48:48.268 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:48:48.269 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:48:48.270 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:48:48.271 [INF] Getting messages for ticket 11
+2025-05-15 17:48:48.286 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:48:48.296 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:48:48.296 [INF] Found 3 messages for ticket 11
+2025-05-15 17:48:48.297 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:48:48.297 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 27.146ms
+2025-05-15 17:48:48.297 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:48:48.298 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 30.2186ms
+2025-05-15 17:49:49.267 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:49:49.268 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:49:49.268 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:49:49.269 [INF] Getting messages for ticket 11
+2025-05-15 17:49:49.283 [INF] Executed DbCommand (12ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:49:49.297 [INF] Executed DbCommand (13ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:49:49.300 [INF] Found 3 messages for ticket 11
+2025-05-15 17:49:49.300 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:49:49.301 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 32.5063ms
+2025-05-15 17:49:49.301 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:49:49.303 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 35.6703ms
+2025-05-15 17:50:50.239 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:50:50.240 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:50:50.240 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:50:50.241 [INF] Getting messages for ticket 11
+2025-05-15 17:50:50.252 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:50:50.261 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:50:50.262 [INF] Found 3 messages for ticket 11
+2025-05-15 17:50:50.262 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:50:50.262 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 21.8476ms
+2025-05-15 17:50:50.262 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:50:50.262 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 23.0937ms
+2025-05-15 17:52:20.328 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:52:20.329 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:52:20.329 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:52:20.332 [INF] Getting messages for ticket 11
+2025-05-15 17:52:20.344 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:52:20.355 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:52:20.356 [INF] Found 3 messages for ticket 11
+2025-05-15 17:52:20.356 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:52:20.356 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 26.7934ms
+2025-05-15 17:52:20.356 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:52:20.357 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 28.3481ms
+2025-05-15 17:52:50.341 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:52:50.341 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:52:50.341 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:52:50.342 [INF] Getting messages for ticket 11
+2025-05-15 17:52:50.344 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:52:50.348 [INF] Executed DbCommand (3ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:52:50.348 [INF] Found 3 messages for ticket 11
+2025-05-15 17:52:50.350 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:52:50.351 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 9.2982ms
+2025-05-15 17:52:50.351 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:52:50.351 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 10.2735ms
+2025-05-15 17:53:20.350 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:53:20.350 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:53:20.350 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:53:20.351 [INF] Getting messages for ticket 11
+2025-05-15 17:53:20.362 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:53:20.370 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:53:20.371 [INF] Found 3 messages for ticket 11
+2025-05-15 17:53:20.371 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:53:20.371 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 21.1132ms
+2025-05-15 17:53:20.371 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:53:20.372 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 22.1535ms
+2025-05-15 17:53:50.391 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:53:50.392 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:53:50.392 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:53:50.393 [INF] Getting messages for ticket 11
+2025-05-15 17:53:50.398 [INF] Executed DbCommand (3ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:53:50.402 [INF] Executed DbCommand (2ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:53:50.403 [INF] Found 3 messages for ticket 11
+2025-05-15 17:53:50.403 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:53:50.404 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 11.5456ms
+2025-05-15 17:53:50.404 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:53:50.404 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 12.5755ms
+2025-05-15 17:54:20.394 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:54:20.395 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:54:20.395 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:54:20.396 [INF] Getting messages for ticket 11
+2025-05-15 17:54:20.412 [INF] Executed DbCommand (14ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:54:20.423 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:54:20.424 [INF] Found 3 messages for ticket 11
+2025-05-15 17:54:20.425 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:54:20.426 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 30.6594ms
+2025-05-15 17:54:20.426 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:54:20.426 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 31.8973ms
+2025-05-15 17:54:50.412 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:54:50.413 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:54:50.413 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:54:50.414 [INF] Getting messages for ticket 11
+2025-05-15 17:54:50.425 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:54:50.434 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:54:50.435 [INF] Found 3 messages for ticket 11
+2025-05-15 17:54:50.435 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:54:50.436 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 22.5314ms
+2025-05-15 17:54:50.436 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:54:50.436 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 23.7836ms
+2025-05-15 17:55:21.249 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:55:21.250 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:55:21.250 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:55:21.251 [INF] Getting messages for ticket 11
+2025-05-15 17:55:21.253 [INF] Executed DbCommand (1ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:55:21.256 [INF] Executed DbCommand (2ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:55:21.257 [INF] Found 3 messages for ticket 11
+2025-05-15 17:55:21.257 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:55:21.258 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 7.1438ms
+2025-05-15 17:55:21.258 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:55:21.258 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 8.8192ms
+2025-05-15 17:57:22.256 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:57:22.257 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:57:22.257 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:57:22.258 [INF] Getting messages for ticket 11
+2025-05-15 17:57:22.274 [INF] Executed DbCommand (12ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:57:22.287 [INF] Executed DbCommand (11ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:57:22.288 [INF] Found 3 messages for ticket 11
+2025-05-15 17:57:22.289 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:57:22.289 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 31.7812ms
+2025-05-15 17:57:22.289 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:57:22.289 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 33.3179ms
+2025-05-15 17:58:53.238 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 17:58:53.238 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:58:53.238 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 17:58:53.239 [INF] Getting messages for ticket 11
+2025-05-15 17:58:53.250 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 17:58:53.258 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 17:58:53.259 [INF] Found 3 messages for ticket 11
+2025-05-15 17:58:53.259 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 17:58:53.260 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 21.1775ms
+2025-05-15 17:58:53.260 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 17:58:53.260 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 22.4144ms
+2025-05-15 18:00:24.253 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:00:24.254 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:00:24.254 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:00:24.257 [INF] Getting messages for ticket 11
+2025-05-15 18:00:24.266 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:00:24.273 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:00:24.273 [INF] Found 3 messages for ticket 11
+2025-05-15 18:00:24.274 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:00:24.274 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 18.7717ms
+2025-05-15 18:00:24.274 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:00:24.274 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 21.1211ms
+2025-05-15 18:01:25.240 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:01:25.240 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:01:25.240 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:01:25.241 [INF] Getting messages for ticket 11
+2025-05-15 18:01:25.255 [INF] Executed DbCommand (11ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:01:25.265 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:01:25.265 [INF] Found 3 messages for ticket 11
+2025-05-15 18:01:25.266 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:01:25.266 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 25.8295ms
+2025-05-15 18:01:25.267 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:01:25.267 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 27.3292ms
+2025-05-15 18:02:56.249 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:02:56.250 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:02:56.250 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:02:56.251 [INF] Getting messages for ticket 11
+2025-05-15 18:02:56.260 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:02:56.266 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:02:56.267 [INF] Found 3 messages for ticket 11
+2025-05-15 18:02:56.267 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:02:56.267 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 16.9348ms
+2025-05-15 18:02:56.267 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:02:56.268 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 18.1841ms
+2025-05-15 18:03:57.249 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:03:57.249 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:03:57.249 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:03:57.250 [INF] Getting messages for ticket 11
+2025-05-15 18:03:57.258 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:03:57.267 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:03:57.267 [INF] Found 3 messages for ticket 11
+2025-05-15 18:03:57.268 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:03:57.268 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 18.4512ms
+2025-05-15 18:03:57.268 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:03:57.268 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 19.8338ms
+2025-05-15 18:05:58.259 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:05:58.259 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:05:58.260 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:05:58.260 [INF] Getting messages for ticket 11
+2025-05-15 18:05:58.267 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:05:58.273 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:05:58.273 [INF] Found 3 messages for ticket 11
+2025-05-15 18:05:58.274 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:05:58.274 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 14.0198ms
+2025-05-15 18:05:58.274 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:05:58.274 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.5375ms
+2025-05-15 18:07:29.244 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:07:29.245 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:07:29.245 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:07:29.246 [INF] Getting messages for ticket 11
+2025-05-15 18:07:29.255 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:07:29.264 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:07:29.264 [INF] Found 3 messages for ticket 11
+2025-05-15 18:07:29.264 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:07:29.265 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 19.6169ms
+2025-05-15 18:07:29.265 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:07:29.265 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 21.1023ms
+2025-05-15 18:08:30.268 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:08:30.269 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:08:30.269 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:08:30.269 [INF] Getting messages for ticket 11
+2025-05-15 18:08:30.276 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:08:30.283 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:08:30.283 [INF] Found 3 messages for ticket 11
+2025-05-15 18:08:30.284 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:08:30.284 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.2321ms
+2025-05-15 18:08:30.284 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:08:30.284 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 16.1858ms
+2025-05-15 18:09:31.240 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:09:31.241 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:09:31.241 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:09:31.242 [INF] Getting messages for ticket 11
+2025-05-15 18:09:31.250 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:09:31.259 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:09:31.259 [INF] Found 3 messages for ticket 11
+2025-05-15 18:09:31.260 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:09:31.260 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 18.6088ms
+2025-05-15 18:09:31.260 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:09:31.260 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 19.7779ms
+2025-05-15 18:11:32.280 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:11:32.281 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:11:32.281 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:11:32.281 [INF] Getting messages for ticket 11
+2025-05-15 18:11:32.292 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:11:32.300 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:11:32.301 [INF] Found 3 messages for ticket 11
+2025-05-15 18:11:32.301 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:11:32.301 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 20.5052ms
+2025-05-15 18:11:32.301 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:11:32.302 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 21.2236ms
+2025-05-15 18:12:33.242 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:12:33.242 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:12:33.243 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:12:33.244 [INF] Getting messages for ticket 11
+2025-05-15 18:12:33.251 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:12:33.258 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:12:33.258 [INF] Found 3 messages for ticket 11
+2025-05-15 18:12:33.259 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:12:33.259 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 16.1026ms
+2025-05-15 18:12:33.259 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:12:33.260 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 18.137ms
+2025-05-15 18:13:34.259 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:13:34.259 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:13:34.259 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:13:34.261 [INF] Getting messages for ticket 11
+2025-05-15 18:13:34.268 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:13:34.274 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:13:34.274 [INF] Found 3 messages for ticket 11
+2025-05-15 18:13:34.274 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:13:34.274 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 14.9005ms
+2025-05-15 18:13:34.274 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:13:34.275 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.8378ms
+2025-05-15 18:15:05.275 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:15:05.275 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:15:05.275 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:15:05.276 [INF] Getting messages for ticket 11
+2025-05-15 18:15:05.284 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:15:05.289 [INF] Executed DbCommand (4ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:15:05.290 [INF] Found 3 messages for ticket 11
+2025-05-15 18:15:05.290 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:15:05.291 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.0207ms
+2025-05-15 18:15:05.291 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:15:05.291 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 16.1484ms
+2025-05-15 18:17:06.243 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:17:06.243 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:17:06.244 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:17:06.244 [INF] Getting messages for ticket 11
+2025-05-15 18:17:06.250 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:17:06.256 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:17:06.257 [INF] Found 3 messages for ticket 11
+2025-05-15 18:17:06.257 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:17:06.257 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 13.5687ms
+2025-05-15 18:17:06.257 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:17:06.258 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 14.3859ms
+2025-05-15 18:18:07.244 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:18:07.244 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:18:07.244 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:18:07.245 [INF] Getting messages for ticket 11
+2025-05-15 18:18:07.252 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:18:07.260 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:18:07.260 [INF] Found 3 messages for ticket 11
+2025-05-15 18:18:07.260 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:18:07.261 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 16.1777ms
+2025-05-15 18:18:07.261 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:18:07.261 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 17.0748ms
+2025-05-15 18:19:38.237 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:19:38.238 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:19:38.238 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:19:38.238 [INF] Getting messages for ticket 11
+2025-05-15 18:19:38.247 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:19:38.254 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:19:38.254 [INF] Found 3 messages for ticket 11
+2025-05-15 18:19:38.255 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:19:38.255 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 16.7822ms
+2025-05-15 18:19:38.255 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:19:38.255 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 17.6696ms
+2025-05-15 18:21:39.244 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:21:39.244 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:21:39.244 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:21:39.245 [INF] Getting messages for ticket 11
+2025-05-15 18:21:39.252 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:21:39.260 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:21:39.261 [INF] Found 3 messages for ticket 11
+2025-05-15 18:21:39.261 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:21:39.261 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 16.9797ms
+2025-05-15 18:21:39.261 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:21:39.261 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 17.8066ms
+2025-05-15 18:22:40.255 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:22:40.255 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:22:40.256 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:22:40.256 [INF] Getting messages for ticket 11
+2025-05-15 18:22:40.263 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:22:40.269 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:22:40.270 [INF] Found 3 messages for ticket 11
+2025-05-15 18:22:40.270 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:22:40.270 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 14.2895ms
+2025-05-15 18:22:40.270 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:22:40.270 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.1116ms
+2025-05-15 18:23:41.246 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:23:41.247 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:23:41.247 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:23:41.248 [INF] Getting messages for ticket 11
+2025-05-15 18:23:41.255 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:23:41.262 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:23:41.262 [INF] Found 3 messages for ticket 11
+2025-05-15 18:23:41.262 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:23:41.262 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.2264ms
+2025-05-15 18:23:41.262 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:23:41.263 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 16.0912ms
+2025-05-15 18:25:12.246 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:25:12.246 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:25:12.246 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:25:12.246 [INF] Getting messages for ticket 11
+2025-05-15 18:25:12.253 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:25:12.259 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:25:12.260 [INF] Found 3 messages for ticket 11
+2025-05-15 18:25:12.260 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:25:12.260 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 13.9252ms
+2025-05-15 18:25:12.260 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:25:12.260 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 14.6905ms
+2025-05-15 18:26:13.245 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:26:13.245 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:26:13.246 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:26:13.246 [INF] Getting messages for ticket 11
+2025-05-15 18:26:13.252 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:26:13.258 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:26:13.258 [INF] Found 3 messages for ticket 11
+2025-05-15 18:26:13.258 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:26:13.259 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 13.0191ms
+2025-05-15 18:26:13.259 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:26:13.259 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 13.7349ms
+2025-05-15 18:27:44.248 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:27:44.248 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:27:44.248 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:27:44.249 [INF] Getting messages for ticket 11
+2025-05-15 18:27:44.256 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:27:44.262 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:27:44.263 [INF] Found 3 messages for ticket 11
+2025-05-15 18:27:44.263 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:27:44.263 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.0932ms
+2025-05-15 18:27:44.264 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:27:44.264 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.8618ms
+2025-05-15 18:29:15.239 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:29:15.239 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:29:15.239 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:29:15.240 [INF] Getting messages for ticket 11
+2025-05-15 18:29:15.246 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:29:15.252 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:29:15.252 [INF] Found 3 messages for ticket 11
+2025-05-15 18:29:15.252 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:29:15.252 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 13.115ms
+2025-05-15 18:29:15.253 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:29:15.253 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 13.8638ms
+2025-05-15 18:30:46.245 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:30:46.246 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:30:46.246 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:30:46.246 [INF] Getting messages for ticket 11
+2025-05-15 18:30:46.258 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:30:46.266 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:30:46.266 [INF] Found 3 messages for ticket 11
+2025-05-15 18:30:46.267 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:30:46.267 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 20.877ms
+2025-05-15 18:30:46.267 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:30:46.267 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 21.9203ms
+2025-05-15 18:31:47.251 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:31:47.251 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:31:47.252 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:31:47.252 [INF] Getting messages for ticket 11
+2025-05-15 18:31:47.264 [INF] Executed DbCommand (10ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:31:47.273 [INF] Executed DbCommand (8ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:31:47.274 [INF] Found 3 messages for ticket 11
+2025-05-15 18:31:47.274 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:31:47.274 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 22.5811ms
+2025-05-15 18:31:47.274 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:31:47.275 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 23.682ms
+2025-05-15 18:33:18.246 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:33:18.246 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:33:18.246 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:33:18.247 [INF] Getting messages for ticket 11
+2025-05-15 18:33:18.254 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:33:18.262 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:33:18.262 [INF] Found 3 messages for ticket 11
+2025-05-15 18:33:18.262 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:33:18.262 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.9648ms
+2025-05-15 18:33:18.263 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:33:18.263 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 16.696ms
+2025-05-15 18:34:19.235 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:34:19.235 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:34:19.236 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:34:19.236 [INF] Getting messages for ticket 11
+2025-05-15 18:34:19.243 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:34:19.249 [INF] Executed DbCommand (5ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:34:19.249 [INF] Found 3 messages for ticket 11
+2025-05-15 18:34:19.249 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:34:19.250 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 13.8216ms
+2025-05-15 18:34:19.250 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:34:19.250 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 14.5622ms
+2025-05-15 18:35:20.251 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:35:20.251 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:35:20.251 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:35:20.251 [INF] Getting messages for ticket 11
+2025-05-15 18:35:20.258 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:35:20.265 [INF] Executed DbCommand (6ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:35:20.265 [INF] Found 3 messages for ticket 11
+2025-05-15 18:35:20.266 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:35:20.266 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 15.0026ms
+2025-05-15 18:35:20.266 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:35:20.267 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 15.5898ms
+2025-05-15 18:36:51.244 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:36:51.244 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:36:51.244 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:36:51.245 [INF] Getting messages for ticket 11
+2025-05-15 18:36:51.253 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:36:51.263 [INF] Executed DbCommand (9ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:36:51.263 [INF] Found 3 messages for ticket 11
+2025-05-15 18:36:51.263 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:36:51.263 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 18.9417ms
+2025-05-15 18:36:51.263 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:36:51.263 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 19.5254ms
+2025-05-15 18:38:22.244 [INF] Request starting HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - null null
+2025-05-15 18:38:22.244 [INF] Executing endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:38:22.245 [INF] Route matched with {action = "GetMessagesByTicketId", controller = "Message"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TicketManagement.Api.DTOs.MessageDto]]] GetMessagesByTicketId(Int32) on controller TicketManagement.Api.Controllers.MessageController (TicketManagement.Api).
+2025-05-15 18:38:22.245 [INF] Getting messages for ticket 11
+2025-05-15 18:38:22.254 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TicketId], [t].[AdminResponse], [t].[Category], [t].[ClosedAt], [t].[CreatedAt], [t].[Description], [t].[Priority], [t].[Status], [t].[SubCategory], [t].[Subject], [t].[UserId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Tickets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[UserId]
+WHERE [t].[TicketId] = @__ticketId_0
+2025-05-15 18:38:22.262 [INF] Executed DbCommand (7ms) [Parameters=[@__ticketId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MessageId], [m].[Content], [m].[IsRead], [m].[SenderId], [m].[SentAt], [m].[TicketId], [u].[UserId], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password]
+FROM [Messages] AS [m]
+INNER JOIN [Users] AS [u] ON [m].[SenderId] = [u].[UserId]
+WHERE [m].[TicketId] = @__ticketId_0
+ORDER BY [m].[SentAt]
+2025-05-15 18:38:22.263 [INF] Found 3 messages for ticket 11
+2025-05-15 18:38:22.263 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TicketManagement.Api.DTOs.MessageDto, TicketManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-15 18:38:22.264 [INF] Executed action TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api) in 18.6915ms
+2025-05-15 18:38:22.264 [INF] Executed endpoint 'TicketManagement.Api.Controllers.MessageController.GetMessagesByTicketId (TicketManagement.Api)'
+2025-05-15 18:38:22.264 [INF] Request finished HTTP/1.1 GET http://localhost:5014/api/message/ticket/11 - 200 null application/json; charset=utf-8 19.8276ms

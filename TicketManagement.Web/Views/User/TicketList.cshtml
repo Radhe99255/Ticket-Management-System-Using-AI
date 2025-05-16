@@ -1,0 +1,80 @@
+@model TicketManagement.Web.Models.TicketListViewModel
+
+@{
+    ViewData["Title"] = $"{Model.ListType} Tickets";
+    Layout = "_Layout";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">@Model.ListType Tickets</h3>
+        <a asp-action="CreateTicket" class="btn btn-light">Create New Ticket</a>
+    </div>
+    <div class="card-body">
+        @if (!Model.Tickets.Any())
+        {
+            <div class="alert alert-info">
+                <p class="mb-0">No @Model.ListType.ToLower() tickets found.</p>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Subject</th>
+                            <th>Priority</th>
+                            <th>Category</th>
+                            <th>Created</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var ticket in Model.Tickets)
+                        {
+                            <tr>
+                                <td>#@ticket.TicketId</td>
+                                <td>@ticket.Subject</td>
+                                <td>
+                                    @switch (ticket.Priority)
+                                    {
+                                        case "Low":
+                                            <span class="badge bg-success">@ticket.Priority</span>
+                                            break;
+                                        case "Medium":
+                                            <span class="badge bg-info">@ticket.Priority</span>
+                                            break;
+                                        case "High":
+                                            <span class="badge bg-warning">@ticket.Priority</span>
+                                            break;
+                                        case "Critical":
+                                            <span class="badge bg-danger">@ticket.Priority</span>
+                                            break;
+                                    }
+                                </td>
+                                <td>@ticket.Category <small class="text-muted">@(!string.IsNullOrEmpty(ticket.SubCategory) ? $"({ticket.SubCategory})" : "")</small></td>
+                                <td>@ticket.CreatedAt.ToString("MMM dd, yyyy HH:mm")</td>
+                                <td>
+                                    @if (ticket.Status == "Open")
+                                    {
+                                        <span class="badge bg-success">@ticket.Status</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">@ticket.Status</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="ViewTicket" asp-route-id="@ticket.TicketId" class="btn btn-sm btn-primary">View</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div> 

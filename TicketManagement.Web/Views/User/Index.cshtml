@@ -1,0 +1,312 @@
+@model TicketManagement.Web.Models.UserDashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_Layout";
+    
+    // Prepare data for charts
+    var monthlyLabels = string.Join(",", Model.MonthlyTickets.Select(m => $"'{m.Month}'"));
+    var monthlyOpenedData = string.Join(",", Model.MonthlyTickets.Select(m => m.OpenedTickets));
+    var monthlyClosedData = string.Join(",", Model.MonthlyTickets.Select(m => m.ClosedTickets));
+    
+    var priorityLabels = string.Join(",", Model.PrioritySummary.Select(p => $"'{p.Priority}'"));
+    var priorityData = string.Join(",", Model.PrioritySummary.Select(p => p.TicketCount));
+    
+    var categoryLabels = string.Join(",", Model.CategorySummary.Select(c => $"'{c.Category}'"));
+    var categoryData = string.Join(",", Model.CategorySummary.Select(c => c.TicketCount));
+}
+
+<div class="container-fluid mt-3">
+    <h1 class="h3 mb-4">Welcome, @Model.UserName!</h1>
+    
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card dashboard-card bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Tickets</h5>
+                    <h2 class="card-text">@Model.TotalTickets</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Open Tickets</h5>
+                    <h2 class="card-text">@Model.OpenTickets</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Closed Tickets</h5>
+                    <h2 class="card-text">@Model.ClosedTickets</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Stats and Action Buttons -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Ticket Completion Rate</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div class="display-4 mb-3">@Model.CompletionRate%</div>
+                    <div class="progress completion-progress">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
+                             style="width: @Model.CompletionRate%;" 
+                             aria-valuenow="@Model.CompletionRate" aria-valuemin="0" aria-valuemax="100">
+                            @Model.CompletionRate%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 text-center mb-3">
+                            <a asp-controller="User" asp-action="CreateTicket" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-plus-circle"></i> New Ticket
+                            </a>
+                        </div>
+                        <div class="col-md-6 text-center mb-3">
+                            <a asp-controller="User" asp-action="OpenTickets" class="btn btn-success btn-lg w-100">
+                                <i class="bi bi-list-ul"></i> Open Tickets
+                            </a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <a asp-controller="User" asp-action="ClosedTickets" class="btn btn-secondary btn-lg w-100">
+                                <i class="bi bi-check-circle"></i> Closed Tickets
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Charts -->
+    <div class="row mb-4">
+        <!-- Monthly Tickets Chart -->
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Monthly Ticket Activity</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="monthlyChart"
+                           data-is-admin="false"
+                           data-labels='[@Html.Raw(monthlyLabels)]'
+                           data-opened='[@monthlyOpenedData]'
+                           data-closed='[@monthlyClosedData]'></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Priority Distribution Chart -->
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Tickets by Priority</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="priorityChart"
+                           data-is-admin="false"
+                           data-labels='[@Html.Raw(priorityLabels)]'
+                           data-values='[@priorityData]'></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Categories & Recent Tickets -->
+    <div class="row mb-4">
+        <!-- Category Distribution Chart -->
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Top Categories</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="categoryChart"
+                           data-is-admin="false"
+                           data-labels='[@Html.Raw(categoryLabels)]'
+                           data-values='[@categoryData]'></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Tickets -->
+        <div class="col-md-6">
+            <div class="card dashboard-card">
+                <div class="card-header">
+                    <h5>Recent Tickets</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        @if (Model.RecentTickets.Any())
+                        {
+                            @foreach (var ticket in Model.RecentTickets)
+                            {
+                                <a href="@Url.Action("ViewTicket", "User", new { id = ticket.TicketId })" class="list-group-item list-group-item-action ticket-item" data-status="@ticket.Status.ToLower()">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1 ticket-subject">@ticket.Subject</h6>
+                                        <small>@ticket.CreatedAt.ToString("MMM dd, yyyy")</small>
+                                    </div>
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <small class="text-muted ticket-description">@(ticket.Description.Length > 50 ? ticket.Description.Substring(0, 50) + "..." : ticket.Description)</small>
+                                        @if (ticket.Status == "Open")
+                                        {
+                                            <span class="badge badge-open">@ticket.Status</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-closed">@ticket.Status</span>
+                                        }
+                                    </div>
+                                </a>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert alert-info">
+                                You haven't created any tickets yet.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Monthly Chart
+            var monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+            var monthlyChart = new Chart(monthlyCtx, {
+                type: 'line',
+                data: {
+                    labels: [@Html.Raw(string.Join(",", Model.MonthlyTickets.Select(m => $"'{m.Month}'")))],
+                    datasets: [
+                        {
+                            label: 'Created Tickets',
+                            data: [@string.Join(",", Model.MonthlyTickets.Select(m => m.OpenedTickets))],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1,
+                            fill: true
+                        },
+                        {
+                            label: 'Closed Tickets',
+                            data: [@string.Join(",", Model.MonthlyTickets.Select(m => m.ClosedTickets))],
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            tension: 0.1,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Your Monthly Ticket Activity'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Tickets'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Priority Chart
+            var priorityCtx = document.getElementById('priorityChart').getContext('2d');
+            var priorityChart = new Chart(priorityCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [@Html.Raw(string.Join(",", Model.PrioritySummary.Select(p => $"'{p.Priority}'")))],
+                    datasets: [{
+                        data: [@string.Join(",", Model.PrioritySummary.Select(p => p.TicketCount))],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Your Tickets by Priority'
+                        },
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+            
+            // Category Chart
+            var categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            var categoryChart = new Chart(categoryCtx, {
+                type: 'bar',
+                data: {
+                    labels: [@Html.Raw(string.Join(",", Model.CategorySummary.Select(c => $"'{c.Category}'")))],
+                    datasets: [{
+                        label: 'Number of Tickets',
+                        data: [@string.Join(",", Model.CategorySummary.Select(c => c.TicketCount))],
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Your Top Categories'
+                        },
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Tickets'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Set flag to indicate charts are already initialized
+        window.chartsInitialized = true;
+    </script>
+} 
